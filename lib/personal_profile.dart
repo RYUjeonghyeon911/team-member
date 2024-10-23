@@ -27,28 +27,30 @@ class MemberProfile extends StatelessWidget {
       margin: EdgeInsets.all(8.0),
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.circular(8.0),
+        color: Colors.grey[850], // 다크 모드 배경 색상
+        borderRadius: BorderRadius.circular(5.0),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: Text(
-              title,
-              style: TextStyle(color: Colors.white, fontSize: 16),
-            ),
+          Text(
+            title,
+            style: TextStyle(
+                color: Color.fromRGBO(11, 96, 176, 1),
+                fontSize: 18,
+                fontWeight: FontWeight.bold), // 밝은 파란색 텍스트
           ),
-          SizedBox(height: 10), // 간격 추가
+          SizedBox(height: 10),
           Container(
-            width: double.infinity, // 화면 너비에 맞게 조정
+            width: double.infinity,
             padding: EdgeInsets.all(12.0),
             decoration: BoxDecoration(
-              color: Colors.white, // 흰색 배경
-              borderRadius: BorderRadius.circular(8.0),
+              color: Colors.grey[800], // 다크 모드 배경
+              borderRadius: BorderRadius.circular(5.0),
             ),
             child: Text(
               content,
-              style: TextStyle(color: Colors.black, fontSize: 14),
+              style: TextStyle(color: Colors.white70, fontSize: 14),
             ),
           ),
         ],
@@ -59,7 +61,12 @@ class MemberProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Colors.black, // 다크 모드 배경색
+      appBar: AppBar(
+        backgroundColor: Colors.black87,
+        title: Text('Member Profile',
+            style: TextStyle(color: Colors.white)), // AppBar 텍스트 색상
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -69,11 +76,13 @@ class MemberProfile extends StatelessWidget {
               padding: EdgeInsets.all(16.0),
               margin: EdgeInsets.only(bottom: 20),
               decoration: BoxDecoration(
-                color: Colors.grey[200], // 배경색으로 영역 구분
-                borderRadius: BorderRadius.circular(12.0),
+                border:
+                    Border.all(color: Color.fromRGBO(11, 96, 176, 1), width: 2),
+                color: Colors.grey[900],
+                borderRadius: BorderRadius.circular(5.0),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.black.withOpacity(0.5),
                     spreadRadius: 3,
                     blurRadius: 7,
                     offset: Offset(0, 3),
@@ -83,41 +92,50 @@ class MemberProfile extends StatelessWidget {
               child: Column(
                 children: [
                   CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage(profileImg), // 전달받은 이미지 경로
+                    radius: 50,
+                    backgroundImage: AssetImage(profileImg),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 15),
                   Text(
                     '안녕하세요, $memberName 입니다.',
                     style: TextStyle(
-                        color: const Color.fromARGB(255, 11, 15, 18),
-                        fontSize: 24,
+                        color: Colors.white, // 밝은 텍스트
+                        fontSize: 26,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'MBTI: $mbti',
-                        style: TextStyle(fontSize: 16, color: Colors.black54),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Color.fromRGBO(11, 96, 176, 1)),
                       ),
                       SizedBox(width: 20),
                       Text(
                         'Age: $age',
-                        style: TextStyle(fontSize: 16, color: Colors.black54),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18,
+                            color: Color.fromRGBO(11, 96, 176, 1)),
                       ),
                     ],
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.email, color: Colors.black54),
+                      Icon(Icons.email, color: Color.fromRGBO(11, 96, 176, 1)),
                       SizedBox(width: 5),
                       Text(
-                        'GitHub: $email',
-                        style: TextStyle(fontSize: 16, color: Colors.black54),
+                        email, // 밝은 파란색으로 텍스트
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                            color: Color.fromRGBO(11, 96, 176, 1)),
                       ),
                     ],
                   ),

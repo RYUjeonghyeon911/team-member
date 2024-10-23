@@ -6,18 +6,18 @@ class ThreadWritePage extends StatelessWidget {
   Widget memberCnt() {
     return GridView.count(
       crossAxisCount: 2,
-      childAspectRatio: 1,
+      childAspectRatio: 0.75,
       padding: EdgeInsets.all(8.0),
       children: [
         _memberProfile(
           '조영은',
           'assets/images/jane.jpg',
-          'INFP',
+          'INFJ',
           28,
-          '입력 해주세요!',
+          '퍼블리셔 경력이 있습니다. 강아지 고양이 사랑합니다. 요즘 취미는 수영, 프리다이빙입니다.',
           '퍼블리셔, 리액트찍먹',
-          '굿 팔로워',
-          'email@email.com',
+          '굿 팔로워도 능력이다(?)',
+          'janecho0601@email.com',
         ),
         _memberProfile(
           '김재형',
@@ -31,21 +31,21 @@ class ThreadWritePage extends StatelessWidget {
         ),
         _memberProfile(
           '류정현',
-          'assets/images/jane.jpg',
+          'assets/images/member_image3.jpg',
           'INTP',
-          00,
-          '입력 해주세요!',
-          '빌리어네어, 고분자공학전공,dart 찍먹',
-          '뼈를 묻겠습니다.',
-          'email@email.com',
+          25,
+          '뼈를 묻겠습니다',
+          '빌리어네어, 고분자공학전공 ',
+          '열심히 하겠습니다.',
+          'jeonghyeonairking@gmail.com',
         ),
         _memberProfile(
           '김민지',
-          'assets/images/jane.jpg',
+          'assets/images/member_image4.jpg',
           'ISFP',
           00,
-          '입력 해주세요!',
-          '마케터, 네이버여행인플루언서, 내일모래반백살, 코린이 ',
+          '여행에 진심인 여행블로거입니다. 여행플랫폼을 만들고 싶어요~',
+          '마케터, 네이버여행인플루언서, 내일모래반백살, 코린이',
           '화이팅!!!!',
           'email@email.com',
         ),
@@ -73,33 +73,97 @@ class ThreadWritePage extends StatelessWidget {
               introduction: introduction,
               tmi: tmi,
               comment: comment,
-              email: email, // comment 인자를 추가하여 전달
+              email: email,
             ));
       },
-      child: Container(
-        margin: EdgeInsets.all(5),
-        width: 100,
-        height: 180, // 높이 값을 180으로 증가
-        color: Colors.blue,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(100),
-              child: Image.asset(
-                profileImg,
-                width: 120,
-                height: 120,
-                fit: BoxFit.cover,
-              ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              memberName,
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
+      child: Card(
+        color: Colors.grey[850], // 다크 모드 카드 배경
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
         ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 10),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(60),
+                child: Image.asset(
+                  profileImg,
+                  width: 120,
+                  height: 120,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                memberName,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white, // 밝은 텍스트
+                ),
+              ),
+              Text(
+                '$mbti | Age: $age',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromRGBO(11, 96, 176, 1), // 파란색 텍스트
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _teamIntroduction() {
+    return Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.black87,
+            const Color.fromARGB(66, 82, 82, 82),
+            const Color.fromARGB(255, 78, 78, 78)
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Color.fromRGBO(11, 96, 176, 1), width: 1),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.group,
+            size: 40,
+            color: Color.fromRGBO(11, 96, 176, 1),
+          ),
+          SizedBox(height: 10),
+          Text(
+            '팀 소개',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(11, 96, 176, 1),
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            '저희 팀은 내일배움캠프 앱창업 5기 2조이며,\nFlutter와 Dart로 창업을 위해 앱제작을 배웁니다.',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.white, // 밝은 텍스트
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }
@@ -107,26 +171,16 @@ class ThreadWritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: Colors.black, // 다크 모드 배경
+      appBar: AppBar(
+        backgroundColor: Colors.black87, // AppBar 배경 다크 모드
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
-              padding: EdgeInsets.all(20.0),
-              color: Colors.grey[200],
-              child: Text(
-                '팀 소개: \n저희 팀은 내일배움캠프 앱창업 5기 2조이며,\nFlutter와 Dart로 창업을 위해 앱제작을 배웁니다.',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-                textAlign: TextAlign.left,
-              ),
-            ),
+            _teamIntroduction(), // 팀 소개 섹션
             SizedBox(height: 20),
             Expanded(
               child: memberCnt(),
