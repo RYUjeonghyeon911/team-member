@@ -63,6 +63,12 @@ class MemberProfile extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black, // 다크 모드 배경색
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios, color: Colors.white), // 커스텀 아이콘
+          onPressed: () {
+            Navigator.pop(context); // 뒤로가기 기능 구현
+          },
+        ),
         backgroundColor: Colors.black87,
         title: Text('Member Profile',
             style: TextStyle(color: Colors.white)), // AppBar 텍스트 색상

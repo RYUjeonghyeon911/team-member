@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
       child: Column(
         children: [
           Icon(
-            Icons.construction, // 대장장이를 연상시키는 아이콘
+            Icons.handyman, // 대장장이를 연상시키는 아이콘
             size: 100,
             color: Colors.blueAccent,
           ),

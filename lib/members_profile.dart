@@ -24,7 +24,47 @@ class ThreadWritePage extends StatelessWidget {
           'assets/images/member_image2.jpg',
           'INFJ',
           29,
-          '웹 기획자로 일을 했습니다. 라라랜드, 보헤미안랩소디, 인터스텔라, 오펜하이머 등 음악, 과학 영화 좋아합니다.',
+          '웹 기획자로 일을 했습니다. 라라랜드, 보헤미안랩소디, 인터스텔라, 오펜하이머 등 음악, 과학 영화 좋아합니다.웹 기획자로 일을 했습니다. 라라랜드, 보헤미안랩소디, 인터스텔라, 오펜하이머 등 음악, 과학 영화 좋아합니다.웹 기획자로 일을 했습니다. 라라랜드, 보헤미안랩소디, 인터스텔라, 오펜하이머 등 음악, 과학 영화 좋아합니다.웹 기획자로 일을 했습니다. 라라랜드, 보헤미안랩소디, 인터스텔라, 오펜하이머 등 음악, 과학 영화 좋아합니다.',
+          '광고홍보전공, 멀티미디어공학(복수전공), 웹기획자, 앱기획(찍먹..)',
+          '한 몸 불사질러 보겠습니다.',
+          'gimjh1120@gmail.com',
+        ),
+        _memberProfile(
+          '류정현',
+          'assets/images/member_image3.jpg',
+          'INTP',
+          25,
+          '뼈를 묻겠습니다',
+          '빌리어네어, 고분자공학전공 ',
+          '열심히 하겠습니다.',
+          'jeonghyeonairking@gmail.com',
+        ),
+        _memberProfile(
+          '김민지',
+          'assets/images/member_image4.jpg',
+          'ISFP',
+          00,
+          '여행에 진심인 여행블로거입니다. 여행플랫폼을 만들고 싶어요~',
+          '마케터, 네이버여행인플루언서, 내일모래반백살, 코린이',
+          '화이팅!!!!',
+          'email@email.com',
+        ),
+        _memberProfile(
+          '조영은',
+          'assets/images/jane.jpg',
+          'INFJ',
+          28,
+          '퍼블리셔 경력이 있습니다. 강아지 고양이 사랑합니다. 요즘 취미는 수영, 프리다이빙입니다.',
+          '퍼블리셔, 리액트찍먹',
+          '굿 팔로워도 능력이다(?)',
+          'janecho0601@email.com',
+        ),
+        _memberProfile(
+          '김재형',
+          'assets/images/member_image2.jpg',
+          'INFJ',
+          29,
+          '웹 기획자로 일을 했습니다. 라라랜드, 보헤미안랩소디, 인터스텔라, 오펜하이머 등 음악, 과학 영화 좋아합니다.웹 기획자로 일을 했습니다. 라라랜드, 보헤미안랩소디, 인터스텔라, 오펜하이머 등 음악, 과학 영화 좋아합니다.웹 기획자로 일을 했습니다. 라라랜드, 보헤미안랩소디, 인터스텔라, 오펜하이머 등 음악, 과학 영화 좋아합니다.웹 기획자로 일을 했습니다. 라라랜드, 보헤미안랩소디, 인터스텔라, 오펜하이머 등 음악, 과학 영화 좋아합니다.',
           '광고홍보전공, 멀티미디어공학(복수전공), 웹기획자, 앱기획(찍먹..)',
           '한 몸 불사질러 보겠습니다.',
           'gimjh1120@gmail.com',
@@ -173,6 +213,12 @@ class ThreadWritePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black, // 다크 모드 배경
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios, color: Colors.white), // 커스텀 아이콘
+          onPressed: () {
+            Navigator.pop(context); // 뒤로가기 기능 구현
+          },
+        ),
         backgroundColor: Colors.black87, // AppBar 배경 다크 모드
       ),
       body: Padding(
