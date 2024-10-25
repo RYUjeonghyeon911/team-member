@@ -8,6 +8,9 @@ class HomeFeedListcontroller extends GetxController {
     feedList.add(feed);
     update();
   }
+  void addhi(){
+    
+  }
 
   void removeFeed(String feedId) {
     feedList.removeWhere((feed) => feed.id == feedId);

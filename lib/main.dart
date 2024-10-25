@@ -17,7 +17,7 @@ void main() async {
       iosBundleId: 'com.example.threadAppSample',
     ),
   );
-  runApp(const MyApp());
+  runApp(const MyApp()); 
 }
 
 class MyApp extends StatelessWidget {
